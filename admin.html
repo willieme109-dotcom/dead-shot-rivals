@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel — Dead Shot Rivals</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="account-page">
+    <main id="admin-login" class="account-card">
+      <h1>Admin Panel</h1>
+      <p>Enter the admin access code.</p>
+      <form id="admin-form">
+        <label>Access code<input id="admin-code" type="password" required autocomplete="off" /></label>
+        <p id="admin-message" aria-live="polite"></p>
+        <button type="submit">Open Panel</button>
+      </form>
+      <a class="back-link" href="index.html">Back to home</a>
+    </main>
+    <main id="admin-panel" class="account-card admin-card hidden">
+      <h1>Player Management</h1>
+      <p>Ban players to prevent login, or permanently delete their local account.</p>
+      <div id="player-list"></div>
+      <a class="back-link" href="index.html">Back to home</a>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>

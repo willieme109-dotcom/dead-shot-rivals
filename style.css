@@ -1,0 +1,60 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #07111f; font-family: Arial, sans-serif; }
+canvas { display: block; }
+#start-screen { position: fixed; inset: 0; z-index: 2; display: grid; place-content: center; text-align: center; color: #f5fbff; background: radial-gradient(circle at center, #173a58, #07111f 70%); }
+h1 { margin: 0 0 12px; font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: .08em; text-transform: uppercase; }
+p { margin: 6px; font-size: 1.1rem; }
+.help { color: #b7c9d9; font-size: .9rem; }
+button { margin: 22px auto 0; border: 2px solid #9ee7ff; border-radius: 6px; padding: 12px 32px; color: #07111f; background: #9ee7ff; font-size: 1rem; font-weight: bold; cursor: pointer; }
+button:hover { background: #fff; }
+.button-link { display: inline-block; border: 2px solid #9ee7ff; border-radius: 6px; padding: 12px 20px; color: #07111f; background: #9ee7ff; font-size: 1rem; font-weight: bold; text-decoration: none; }
+.button-link:hover { background: #fff; }
+.play-button { display: block; }
+#account-actions { display: flex; justify-content: center; gap: 10px; margin-top: 16px; }
+#account-actions.hidden, #account-status.hidden { display: none; }
+#account-actions button { margin: 0; }
+.outline-button { color: #dff7ff; background: transparent; }
+#account-status { min-height: 1.2em; margin-top: 18px; color: #b7c9d9; font-size: .9rem; }
+#account-modal { position: fixed; inset: 0; z-index: 3; display: grid; place-items: center; background: rgba(2, 10, 18, .8); }
+#account-modal.hidden { display: none; }
+#account-form { position: relative; width: min(90vw, 360px); padding: 30px; border: 1px solid #78cce7; border-radius: 12px; color: #edfaff; background: #102b42; box-shadow: 0 20px 70px #000; }
+#account-form h2 { margin: 0 0 22px; }
+#account-form label { display: grid; gap: 7px; text-align: left; font-size: .85rem; color: #c6e6f4; }
+#account-form input { margin-bottom: 15px; padding: 10px; border: 1px solid #77b6df; border-radius: 5px; color: white; background: #071927; font-size: 1rem; }
+#account-form button[type="submit"] { display: block; width: 100%; margin-top: 8px; }
+#close-modal { position: absolute; top: 8px; right: 12px; margin: 0; padding: 0; border: 0; color: #c6e6f4; background: transparent; font-size: 2rem; }
+.text-button { display: block; margin: 14px auto 0; padding: 0; border: 0; color: #9ee7ff; background: transparent; font-size: .85rem; font-weight: normal; }
+#form-message { min-height: 1.1em; margin: 0; color: #ffbf9f; font-size: .85rem; }
+.account-page { display: grid; min-height: 100%; place-items: center; padding: 20px; color: #f5fbff; background: radial-gradient(circle at center, #173a58, #07111f 70%); }
+.account-card { width: min(92vw, 390px); padding: 32px; border: 1px solid #78cce7; border-radius: 12px; background: #102b42; box-shadow: 0 20px 70px #000; }
+.account-card h1 { margin: 0 0 8px; font-size: 2rem; letter-spacing: .04em; }
+.account-card label { display: grid; gap: 7px; margin-top: 17px; color: #c6e6f4; font-size: .85rem; }
+.account-card input { padding: 11px; border: 1px solid #77b6df; border-radius: 5px; color: white; background: #071927; font-size: 1rem; }
+.account-card button { display: block; width: 100%; margin-top: 22px; }
+.back-link { display: block; margin-top: 18px; color: #9ee7ff; text-align: center; }
+.admin-link { display: block; margin-top: 20px; color: #9ee7ff; font-size: .8rem; }
+.admin-card { width: min(94vw, 700px); }
+.lobby-card { width: min(92vw, 460px); text-align: center; }
+.lobby-card h2 { margin: 5px 0 16px; color: #9ee7ff; font-size: 2.4rem; letter-spacing: .15em; }
+.eyebrow { color: #9ee7ff; font-size: .72rem; font-weight: bold; letter-spacing: .18em; }
+#lobby-actions button { width: 100%; }
+.divider { margin: 24px 0 8px; color: #b7c9d9; font-size: .8rem; }
+#join-room-form label { display: grid; gap: 7px; text-align: left; color: #c6e6f4; font-size: .85rem; }
+#join-room-form input { padding: 11px; border: 1px solid #77b6df; border-radius: 5px; color: white; background: #071927; font-size: 1rem; text-transform: uppercase; }
+#room-status { color: #b7c9d9; }
+.player-slot { margin: 9px 0; padding: 11px; border: 1px solid #3f6680; border-radius: 6px; text-align: left; background: #0b2234; }
+.muted { color: #90a1ab; }
+.status-dot { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: #61e8a4; }
+.muted .status-dot { background: #61717c; }
+.lobby-note { margin-top: 24px; color: #91a7b5; font-size: .75rem; }
+#player-list { display: grid; gap: 10px; margin-top: 22px; }
+.player-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px; border: 1px solid #3f6680; border-radius: 7px; background: #0b2234; }
+.player-row p { margin: 0; text-align: left; }
+.player-row small { color: #b7c9d9; }
+.player-actions { display: flex; gap: 7px; }
+.player-actions button { width: auto; margin: 0; padding: 7px 10px; font-size: .78rem; }
+.danger-button { border-color: #ff8878; color: white; background: #9e3028; }
+#crosshair { position: fixed; z-index: 1; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font: 32px/1 monospace; text-shadow: 0 0 4px #000; pointer-events: none; }
+#hud { position: fixed; z-index: 1; left: 20px; bottom: 18px; color: #dff7ff; font-size: .85rem; text-shadow: 0 1px 2px #000; pointer-events: none; }
+#player-bar { position: fixed; z-index: 4; top: 16px; right: 18px; display: flex; align-items: center; gap: 10px; padding: 9px 12px; border: 1px solid #78cce7; border-radius: 7px; color: #effaff; background: rgba(7, 25, 39, .85); box-shadow: 0 4px 15px rgba(0, 0, 0, .35); }
+#logout-button { margin: 0; padding: 6px 9px; border-width: 1px; color: #dff7ff; background: transparent; font-size: .75rem; }

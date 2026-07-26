@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In — Dead Shot Rivals</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="account-page" data-mode="login">
+    <main class="account-card">
+      <h1>Log In</h1>
+      <p>Welcome back, Rival.</p>
+      <form id="account-form">
+        <label>Username<input id="username" required minlength="3" maxlength="16" autocomplete="username" /></label>
+        <label>Password<input id="password" type="password" required minlength="4" autocomplete="current-password" /></label>
+        <p id="form-message" aria-live="polite"></p>
+        <button type="submit">Log In</button>
+      </form>
+      <a class="back-link" href="create-account.html">Need an account? Create one</a>
+      <a class="back-link" href="index.html">Back to home</a>
+    </main>
+    <script src="account.js"></script>
+  </body>
+</html>

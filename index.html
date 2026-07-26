@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dead Shot Rivals</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="player-bar" hidden>
+      <span id="player-name"></span>
+      <button id="logout-button">Log Out</button>
+    </div>
+    <div id="start-screen">
+      <h1>Dead Shot Rivals</h1>
+      <p>3D multiplayer shooting game</p>
+      <div id="account-actions">
+        <a href="login.html" class="button-link outline-button">Log In</a>
+        <a href="create-account.html" class="button-link">Create Account</a>
+      </div>
+      <p id="account-status">Log in or create an account to play.</p>
+      <button id="start-button" class="play-button" hidden>Enter Game</button>
+      <a class="admin-link" href="admin.html">Admin Panel</a>
+    </div>
+    <div id="crosshair" aria-hidden="true">+</div>
+    <div id="hud">Move: WASD &nbsp; | &nbsp; Look: Mouse</div>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.min.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>

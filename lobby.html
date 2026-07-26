@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lobby — Dead Shot Rivals</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="account-page">
+    <main class="account-card lobby-card">
+      <p class="eyebrow">DEAD SHOT RIVALS</p>
+      <h1>Game Lobby</h1>
+      <p id="welcome-player"></p>
+      <div id="lobby-actions">
+        <button id="create-room">Create Room</button>
+        <p class="divider">or join a friend</p>
+        <form id="join-room-form">
+          <label>Room code<input id="room-code" required maxlength="6" placeholder="ABC123" autocomplete="off" /></label>
+          <button type="submit" class="outline-button">Join Room</button>
+        </form>
+      </div>
+      <section id="room-view" class="hidden">
+        <p class="eyebrow">YOUR ROOM CODE</p>
+        <h2 id="active-room-code"></h2>
+        <p id="room-status">Waiting for another player...</p>
+        <div class="player-slot"><span class="status-dot"></span><span id="host-player"></span> (You)</div>
+        <div class="player-slot muted"><span class="status-dot"></span>Open player slot</div>
+        <button id="leave-room" class="outline-button">Leave Room</button>
+      </section>
+      <p class="lobby-note">Online room connections will activate when the game server is published.</p>
+      <a class="back-link" href="index.html">Back to home</a>
+    </main>
+    <script src="lobby.js"></script>
+  </body>
+</html>
