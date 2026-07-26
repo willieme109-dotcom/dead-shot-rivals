@@ -28,7 +28,15 @@
     <div id="hud">Move: WASD &nbsp; | &nbsp; Look: Mouse</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-      document.querySelector('#start-button').addEventListener('click', () => {
+      const savedPlayer = localStorage.getItem('dsr-current-player');
+      const enterButton = document.querySelector('#start-button');
+      if (savedPlayer) {
+        enterButton.hidden = false;
+        enterButton.textContent = 'Enter Game as ' + savedPlayer;
+        document.querySelector('#account-actions').classList.add('hidden');
+        document.querySelector('#account-status').classList.add('hidden');
+      }
+      enterButton.addEventListener('click', () => {
         if (new URLSearchParams(location.search).get('mode') !== 'single') location.href = 'lobby.html';
       });
     </script>
